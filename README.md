@@ -1,9 +1,52 @@
-# openvpn-install
+# 🔒 OpenVPN Server Installer
 
+**One-command OpenVPN server setup for modern Linux distributions**
 
-OpenVPN installer for Debian, Ubuntu, Fedora, CentOS, Arch Linux, Oracle Linux, Rocky Linux and AlmaLinux.
+[![GitHub stars](https://img.shields.io/github/stars/kiz77/openvpn-install?style=for-the-badge&logo=github)](https://github.com/kiz77/openvpn-install/stargazers)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
 
-This script will let you setup your own secure VPN server in just a few seconds.
+## 🚀 Quick Start
+
+Get your own secure VPN server running in under 2 minutes:
+
+## Table of Contents
+
+- [Quick Start](#quick-start) ✅
+- [Features](#features) ✨
+- [Compatibility](#compatibility) 🧩
+- [Headless / Automation](#headless--automation) 🤖
+- [Usage](#usage) 🛠️
+- [Security & Encryption](#security--encryption) 🔒
+- [Contributing](#contributing) 🤝
+- [FAQ](#faq) ❓
+- [License](#license) 📄
+
+---
+
+## Quick Start
+
+Download and run the installer (as root):
+
+```bash
+curl -O https://raw.githubusercontent.com/kiz77/openvpn-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
+sudo ./openvpn-install.sh
+```
+
+First run will guide you through a few questions to configure your server. After installation, `.ovpn` files for your clients will be available in the home directory.
+
+One-line headless install (useful for automation):
+
+```bash
+AUTO_INSTALL=y ./openvpn-install.sh
+# or
+export AUTO_INSTALL=y && ./openvpn-install.sh
+```
+
+Export other environment variables to customize the headless behavior (examples): `APPROVE_INSTALL`, `APPROVE_IP`, `IPV6_SUPPORT`, `PORT_CHOICE`, `PROTOCOL_CHOICE`, `DNS`, `COMPRESSION_ENABLED`, `CLIENT`, `PASS`, `ENDPOINT`.
+
+---
 
 ## Usage
 
@@ -32,9 +75,7 @@ When OpenVPN is installed, you can run the script again, and you will get the ch
 
 In your home directory, you will have `.ovpn` files. These are the client configuration files. Download them from your server and connect using your favorite OpenVPN client.
 
-If you have any question, head to the [FAQ](#faq) first. Please read everything before opening an issue.
-
-**PLEASE do not send me emails or private messages asking for help.** The only place to get help is the issues. Other people may be able to help and in the future, other users may also run into the same issue as you. My time is not available for free just for you, you're not special.
+If you have questions, check the [FAQ](#faq) first. If you still need help, please open an issue and include details such as OS, command output and the steps you took — that helps maintainers and users debug faster. Please avoid direct messages so solutions remain public and discoverable.
 
 ### Headless install
 
